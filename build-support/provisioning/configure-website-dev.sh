@@ -7,11 +7,8 @@
 WEB_PROJECT_NAME=$1
 
 if [[ ! -d "/var/wwwroot" ]]; then
-	echo "/var/wwwroot directory does not exist yet... creating it now..."
-	sudo mkdir -p /var/wwwroot
-
-	echo "Setting up binding between '/var/wwwroot/' and '/vagrant/src/${WEB_PROJECT_NAME}/'..."
-	sudo mount --bind "/vagrant/src/${WEB_PROJECT_NAME}/" /var/wwwroot/
+	echo "Setting up symlink between '/var/wwwroot/' and '/vagrant/src/${WEB_PROJECT_NAME}/'..."
+    sudo ln -s /vagrant/src/${WEB_PROJECT_NAME}/ /var/wwwroot
 fi
 
 sudo cp -f /vagrant/build-support/server-files/development/wwwroot-watcher.sh /etc/init.d/wwwroot-watcher.sh

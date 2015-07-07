@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-        <% var test = "Hello World! Got an aspx page running on nginx!!!"; %>
+        <% var test = "Hello World! Got an aspx page running on nginx w/folder symlink!!!"; %>
         <%= test %>
     </div>
 </body>
